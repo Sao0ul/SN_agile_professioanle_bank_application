@@ -1,0 +1,83 @@
+<!--  Fichier pom.xml utilisé par Maven pour gérer le projet Java  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--  Version du modèle Maven utilisé (obligatoire)  -->
+<modelVersion>4.0.0</modelVersion>
+<!--  Identifiant du groupe : généralement le nom du package Java ou d’organisation  -->
+<groupId>BankSystem</groupId>
+<!--  Nom unique du projet ou de l’application  -->
+<artifactId>BankSystem</artifactId>
+<!--  Type de fichier généré : ici un fichier JAR  -->
+<packaging>jar</packaging>
+<!--  Version actuelle du projet  -->
+<version>1.0-SNAPSHOT</version>
+<!--  Nom lisible du projet  -->
+<name>BankSystem</name>
+<!--  URL du projet (optionnelle ici, utilisée pour documentation)  -->
+<url>http://example.org/mainApp</url>
+<!--  Déclaration des dépendances : bibliothèques nécessaires au projet  -->
+<dependencies>
+<!--  Dépendance JavaFX : module pour les contrôles (UI)  -->
+<dependency>
+<groupId>org.openjfx</groupId>
+<artifactId>javafx-controls</artifactId>
+<version>20.0.1</version>
+</dependency>
+<!--  Dépendance JavaFX : module FXML pour charger des interfaces XML  -->
+<dependency>
+<groupId>org.openjfx</groupId>
+<artifactId>javafx-fxml</artifactId>
+<version>20.0.1</version>
+</dependency>
+<!--  Dépendance JavaFX : audio, vidéo  -->
+<dependency>
+<groupId>org.openjfx</groupId>
+<artifactId>javafx-media</artifactId>
+<version>20.0.1</version>
+</dependency>
+<!--  Dépendance pour le connecteur JDBC MySQL  -->
+<dependency>
+<groupId>mysql</groupId>
+<artifactId>mysql-connector-java</artifactId>
+<version>8.0.33</version>
+<!--  ou la dernière version disponible  -->
+</dependency>
+<!--  Dépendance JavaFX : WebView (navigateur intégré)  -->
+<dependency>
+<groupId>org.openjfx</groupId>
+<artifactId>javafx-web</artifactId>
+<version>20.0.1</version>
+</dependency>
+<!--  JUnit pour les tests unitaires (utilisé uniquement pendant les tests)  -->
+<dependency>
+<groupId>org.junit.jupiter</groupId>
+<artifactId>junit-jupiter</artifactId>
+<version>5.10.0</version>
+<scope>test</scope>
+</dependency>
+</dependencies>
+<!--  Configuration de la construction du projet  -->
+<build>
+<plugins>
+<!--  Plugin de compilation Java  -->
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.11.0</version>
+<configuration>
+<!--  Version de Java utilisée (Java 17 ici)  -->
+<release>17</release>
+</configuration>
+</plugin>
+<!--  Plugin d'exécution JavaFX  -->
+<plugin>
+<groupId>org.openjfx</groupId>
+<artifactId>javafx-maven-plugin</artifactId>
+<version>0.0.8</version>
+<configuration>
+<!--  Classe principale contenant la méthode main  -->
+<mainClass>BankSystem.App</mainClass>
+</configuration>
+</plugin>
+</plugins>
+</build>
+</project>
